@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorna7_Utilities.TenantServicesPage">
+
+    <Grid RowDefinitions="Auto,Auto,Auto,*,Auto,Auto" Padding="15" RowSpacing="10">
+
+        <Label x:Name="HeaderLabel" FontAttributes="Bold" FontSize="18" />
+
+
+        <Picker x:Name="ServicePicker"
+                Grid.Row="1"
+                Title="Оберіть послугу"
+                ItemDisplayBinding="{Binding ServiceName}" />
+
+        <Button Grid.Row="2"
+                Text="➕ Додати послугу мешканцю"
+                Clicked="OnAddClicked" />
+
+        <CollectionView x:Name="LinksView" Grid.Row="3"
+                        SelectionMode="Single"
+                        SelectionChanged="OnLinkSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10" Margin="0,4" StrokeShape="RoundRectangle 8">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding ServiceName}" FontAttributes="Bold" />
+                            <Label Text="{Binding Charge, StringFormat='Нараховано: {0:F2} грн'}" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label x:Name="TotalLabel" Grid.Row="4" FontAttributes="Bold" />
+  
+        <Button Grid.Row="5"
+        Text="✅ Готово"
+        Clicked="OnDoneClicked" />
+    </Grid>
+</ContentPage>

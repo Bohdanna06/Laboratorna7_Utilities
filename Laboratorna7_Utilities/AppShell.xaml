@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Laboratorna7_Utilities.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Laboratorna7_Utilities"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Laboratorna7_Utilities">
+
+    <TabBar>
+        <ShellContent
+        Title="Мешканці"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+        <ShellContent
+        Title="Послуги"
+        ContentTemplate="{DataTemplate local:ServicesPage}"
+        Route="ServicesPage" />
+    </TabBar>
+
+</Shell>
